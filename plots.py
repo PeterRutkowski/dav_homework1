@@ -1,3 +1,5 @@
+# generates plots of amino acid contents of proteomes
+
 import matplotlib.pyplot as plt
 import numpy as np
 
