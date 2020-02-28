@@ -1,3 +1,5 @@
+# download data from UniProt
+
 import os
 import random
 
