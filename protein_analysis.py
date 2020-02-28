@@ -17,7 +17,7 @@ def average_protein_length(filename):
     return sum/counter
 
 def amino_acid_content(aminoacids, filename):
-    # returns a dictionary with quantities of amino acids
+    # returns a dictionary with quantities of amino acids in proteomes
     f = open(filename, 'r')
 
     j = 0
