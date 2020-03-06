@@ -34,7 +34,7 @@ avs = []
 stds = []
 
 for i in range(len(labels)):
-    av, std = average_std_calculator('hw2/data_' + labels[i] + '.fasta')
+    av, std = average_std_calculator('data/data_' + labels[i] + '.fasta')
     avs.append(av)
     stds.append(std)
 
