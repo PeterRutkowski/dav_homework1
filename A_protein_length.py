@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def average_std_calculator(filename):
-    # returns average protein length from data in filename
+    # returns average protein length and their standard deviation from data in filename
     f = open(filename, 'r')
 
     lengths = []
@@ -38,9 +38,7 @@ for i in range(len(labels)):
     avs.append(av)
     stds.append(std)
 
-print(avs)
 sorted_ind = np.argsort(avs)
-print(sorted_ind)
 sorted_avs = []
 sorted_labels = []
 sorted_std =[]
@@ -51,7 +49,7 @@ for i in range(len(sorted_ind)):
     sorted_std.append(stds[sorted_ind[i]])
 
 def plot(avs, labels, errors):
-    # Build the plot
+    # builds the plot
     x_pos = np.arange(len(labels))
     fig, ax = plt.subplots()
     ax.bar(x_pos, avs, yerr=errors, align='center', alpha=0.5, ecolor='black', capsize=10)
