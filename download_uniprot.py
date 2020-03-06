@@ -3,7 +3,10 @@
 import os
 import random
 
-folder_name = 'Eukaryota' # possible folder names: Bacteria, Viruses, Archaea, Eukaryota
+
+folder_name = 'Bacteria' # possible folder names: Bacteria, Viruses, Archaea, Eukaryota
+# download each folder one by one and save files in data/uniprot_<foldername in lowercase>/
+# for example: data/uniprot_bacteria/
 
 target_url = 'ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/'+ folder_name +'/'
 
