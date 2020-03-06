@@ -62,7 +62,7 @@ true_labels = {'ecoli' : 'E. coli', 'human' : 'H. sapiens', 'yeast' : 'S. cerevi
 contents = []
 
 for label in labels:
-    contents.append(amino_acid_content('hw2/data_' + label + '.fasta'))
+    contents.append(amino_acid_content('data/data_' + label + '.fasta'))
 
 sums = np.sum(contents, axis=0)
 
