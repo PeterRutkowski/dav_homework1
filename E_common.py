@@ -58,7 +58,7 @@ amino_acids = ['G','A','L','M','F','W','K','Q','E','S','P','V','I','C','Y','H','
 quantities = []
 
 for label in labels:
-    quantities.append(amino_acid_content('hw2/data_' + label + '.fasta'))
+    quantities.append(amino_acid_content('data/data_' + label + '.fasta'))
 
 # prepare data for plotting a table
 data = []
