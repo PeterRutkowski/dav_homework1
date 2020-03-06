@@ -2,7 +2,7 @@ import numpy as np
 from prettytable import PrettyTable
 
 def amino_acid_content(filename):
-    # returns a dictionary with quantities of amino acids at N-terminus
+    # returns a list with amino acid quantities at N-terminus
 
     amino_acids = {
         'G': 0,
@@ -60,18 +60,16 @@ quantities = []
 for label in labels:
     quantities.append(amino_acid_content('hw2/data_' + label + '.fasta'))
 
+# prepare data for plotting a table
 data = []
 for i in range(len(quantities)):
     data.append([true_labels[labels[i]], amino_acids[np.argmax(quantities[i])]])
 
-
+# build the table
 x = PrettyTable()
-
-
 x.title = 'Most common amino acid at proteins\' N-Terminus for given proteome'
 x.field_names = ['proteome', 'most common amino acid at N-Terminus']
 for entry in data:
     x.add_row(entry)
 
 print(x)
-
