@@ -1,12 +1,10 @@
 import numpy as np
 import matplotlib as mpl
-
 mpl.use('agg')
-
 import matplotlib.pyplot as plt
 
 def average_protein_length(filename):
-    # returns average protein length from data in filename
+    # return a numpy array of protein lengths
     f = open(filename, 'r')
 
     lengths = []
@@ -34,39 +32,31 @@ true_labels = {'ecoli' : 'E. coli', 'elegans' : 'C. elegans', 'human' : 'H. sapi
                'zebrafish' : 'D. rerio'}
 
 for label in labels:
-
-    # Create a figure instance
+    # build the plot
     fig = plt.figure()
     plt.ylim(0, 1500)
 
-    # Create an axes instance
     ax = fig.add_subplot()
     ax.set_ylabel('Protein length')
     ax.set_title('Box plot of protein lengths of ' + true_labels[label])
     ax.set_xticklabels([true_labels[label]])
 
-    # Create the boxplot
-    bp = ax.boxplot(average_protein_length('hw2/data_' + label + '.fasta'), 0,  '')
+    # create the boxplot
+    bp = ax.boxplot(average_protein_length('data/data_' + label + '.fasta'), 0,  '')
 
-    # Save the figure
     fig.savefig('plots/D_' + label + '.png')
     plt.close(fig)
 
-
-#pdb
-# Create a figure instance
+# build the additional plot for PDB data
 fig = plt.figure()
 plt.ylim(0, 1500)
 
-# Create an axes instance
 ax = fig.add_subplot()
 ax.set_ylabel('Protein length')
 ax.set_title('Box plot of protein lengths of PDB dataset')
 ax.set_xticklabels(['PDB dataset'])
 
-# Create the boxplot
 bp = ax.boxplot(average_protein_length('data/pdb_seqres.txt'), 0, '')
 
-# Save the figure
 fig.savefig('plots/D_' + 'PDB' + '.png')
 plt.close(fig)
