@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 def amino_acid_content(directory):
-    # returns a dictionary with quantities of amino acids
+    # return a list with percentage contents of amino acids
 
     amino_acids = {
         'G': 0,
@@ -75,16 +75,17 @@ for label in labels:
     contents.append(amino_acid_content('data/uniprot_' + label))
 
 def plot(amino_acids, contents):
-
-    sums = np.sum(contents, axis=0)
-    sorted_ind = np.argsort(sums)
-
+    # build the plot
     archaea_content = contents[0]
     bacteria_content = contents[1]
     eukaryota_content = contents[2]
     viruses_content = contents[3]
     full_content = contents[4]
-
+    
+    # sort data for plotting
+    sums = np.sum(contents, axis=0)
+    sorted_ind = np.argsort(sums)
+    
     labels = []
     archaea_sorted = []
     bacteria_sorted = []
