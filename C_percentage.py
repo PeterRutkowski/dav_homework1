@@ -3,7 +3,7 @@ import os
 import numpy as np
 
 def amino_acid_content(directory):
-    # returns a dictionary with quantities of amino acids
+    # return a list with percentage contents of amino acids
 
     amino_acids = {
         'G': 0,
@@ -70,12 +70,14 @@ for label in labels:
     print(label)
     contents.append(amino_acid_content('data/uniprot_' + label))
 
+# build the table
 x = PrettyTable()
 
 x.title = 'Amino acid percentage content in proteins of given proteomes'
 x.field_names = ['amino acid', true_labels['archaea'], true_labels['bacteria'],
                  true_labels['eukaryota'], true_labels['viruses'], true_labels['full']]
 
+# sort table data
 sums = []
 for i in range(len(amino_acids)):
     sum = 0
