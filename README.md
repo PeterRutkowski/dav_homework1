@@ -40,7 +40,7 @@ Discuss which is better: median or arthmetic mean (prons and cons)?
 
 ========================================================
 
-Moreover, answer which amino acid is the most frequent 
+e) Moreover, answer which amino acid is the most frequent 
 at N-terminus? Can you justify why this one? Is it the 
 same in each organism?
 
