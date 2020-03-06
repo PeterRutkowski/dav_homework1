@@ -2,7 +2,7 @@ import numpy as np
 from prettytable import PrettyTable
 
 def average_protein_length(filename):
-    # returns average protein length from data in filename
+    # return the average protein length
     f = open(filename, 'r')
 
     lengths = []
@@ -29,7 +29,7 @@ def average_protein_length(filename):
     return np.average(lengths)
 
 def amino_acid_content(filename):
-    # returns a dictionary with quantities of amino acids
+    # return a list with percentage contents of amino acids
 
     amino_acids = {
         'G': 0,
@@ -91,6 +91,7 @@ print(np.round(average_protein_length('data/pdb_seqres.txt'), 2))
 print()
 print('PDB amino acid percentage contents:')
 
+# sort data for plotting
 sorted_ind = np.argsort(contents_b)[:20]
 
 sorted_content = []
@@ -100,10 +101,10 @@ for i in range(len(sorted_ind)):
     sorted_content.append(contents_b[sorted_ind[i]])
     sorted_labels.append((amino_acids[sorted_ind[i]]))
 
-
 for i in range(len(contents_b)):
     sorted_content[i] = str(sorted_content[i]) + '%'
 
+# build the table of percentage contents
 x = PrettyTable()
 x.field_names = sorted_labels
 
