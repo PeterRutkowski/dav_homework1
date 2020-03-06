@@ -3,11 +3,11 @@
 import os
 import random
 
-folder_name = 'Eukaryota' # possible names: Bacteria, Viruses, Archaea, Eukaryota
+folder_name = 'Eukaryota' # possible folder names: Bacteria, Viruses, Archaea, Eukaryota
 
 target_url = 'ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/'+ folder_name +'/'
 
-import urllib.request  # the lib that handles the url stuff
+import urllib.request
 counter = 0
 for line in urllib.request.urlopen(target_url):
     if line.decode('utf-8')[-12] != 'A':
@@ -24,8 +24,6 @@ for line in urllib.request.urlopen(target_url):
     if line.decode('utf-8')[-12] != 'A':
         if line.decode('utf-8')[-10] == 'f':
             if l[i] == counter:
-                print(str(i+1) +' / 200')
-                #print('wget', target_url + str(line.decode('utf-8')[56:-2]))
                 os.system('wget '+ target_url + str(line.decode('utf-8')[56:-2]))
                 i = i + 1
                 if i == 200:
