@@ -66,7 +66,7 @@ true_labels = {'ecoli' : 'E. coli', 'elegans' : 'C. elegans', 'human' : 'H. sapi
 contents = []
 
 for label in labels:
-    contents.append(amino_acid_content('hw2/data_' + label + '.fasta'))
+    contents.append(amino_acid_content('data/data_' + label + '.fasta'))
 
 # build table
 x = PrettyTable()
