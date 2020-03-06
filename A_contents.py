@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def amino_acid_content(filename):
-    # returns a dictionary with quantities of amino acids
+    # returns a list with percentages of amino acid contents
 
     amino_acids = {
         'G': 0,
@@ -66,9 +66,11 @@ for label in labels:
 
 sums = np.sum(contents, axis=0)
 
+# indices of sorted data
 sorted_ind = np.argsort(sums)
 
 def plot(amino_acids, contents, indexes):
+    # builds plot
     ecoli_content = contents[0]
     human_content = contents[1]
     yeast_content = contents[2]
@@ -107,11 +109,5 @@ def plot(amino_acids, contents, indexes):
     plt.grid(c='black', which='major' , axis='y', linewidth=0.2)
     plt.savefig('plots/' + 'A_contents' + '.png')
     plt.close(fig)
-
-cut_contents = []
-for i in range(len(contents)):
-    cut_contents.append(contents[i][:20])
-
-cut_amino_acids = amino_acids[:20]
 
 plot(amino_acids, contents, sorted_ind)
