@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def amino_acid_content(filename):
-    # returns a list with percentages of amino acid contents
+    # return a list with percentages of amino acid contents
 
     amino_acids = {
         'G': 0,
@@ -70,7 +70,7 @@ sums = np.sum(contents, axis=0)
 sorted_ind = np.argsort(sums)
 
 def plot(amino_acids, contents, indexes):
-    # builds plot
+    # build plot
     ecoli_content = contents[0]
     human_content = contents[1]
     yeast_content = contents[2]
@@ -88,16 +88,15 @@ def plot(amino_acids, contents, indexes):
 
     labels = amino_acids_sorted
 
-    x = np.arange(len(labels))  # the label locations
+    x = np.arange(len(labels))  # label locations
     x = x*1.5
-    width = 0.35  # the width of the bars
+    width = 0.35  # width of the bars
 
     fig, ax = plt.subplots()
+    
     ax.bar(x - width, ecoli_sorted, width, label=true_labels['ecoli'])
     ax.bar(x, human_sorted, width, label=true_labels['human'])
     ax.bar(x + width, yeast_sorted, width, label=true_labels['yeast'])
-
-    # Add some text for labels, title and custom x-axis tick labels, etc.
     ax.locator_params(nbins=10, axis='y')
     ax.set_ylabel('% of amino acid in proteins of given proteomes')
     ax.set_title('Amino acid percentage content in proteins of given proteomes')
