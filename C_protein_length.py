@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 def average_protein_length(directory):
-    # returns average protein length from data in filename
+    # return average protein length and standard deviation
     lengths = []
     line_length = 0
     for filename in os.listdir(directory):
@@ -37,6 +37,7 @@ for i in range(len(labels)):
     avs.append(av)
     stds.append(std)
 
+# sort data for plotting
 sorted_ind = np.argsort(avs)
 sorted_avs = []
 sorted_labels = []
@@ -48,19 +49,18 @@ for i in range(len(sorted_ind)):
     sorted_std.append(stds[sorted_ind[i]])
 
 def plot(avs, labels, errors):
-    # Build the plot
+    # build the plot
     x_pos = np.arange(len(labels))
     fig, ax = plt.subplots()
+    
     ax.bar(x_pos, avs, yerr=errors, align='center', alpha=0.5, ecolor='black', capsize=10)
     ax.set_ylabel('Average protein length')
     ax.set_xticks(x_pos)
     ax.set_xticklabels(labels)
     ax.set_title('Average protein lengths of given proteomes')
     ax.yaxis.grid(True)
-
     ax.legend(['protein length'])
-
-    # Save the figure and show
+    
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.savefig('plots/' + 'C_protein_length' + '.png')
