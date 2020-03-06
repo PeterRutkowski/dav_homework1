@@ -21,7 +21,7 @@ b) PDB # ftp://ftp.wwpdb.org/pub/pdb/derived_data/pdb_seqres.txt saved as data/p
 Compare the result with the point (a). Can you explain the difference? 
 
 c) UniProt
-- full UniProt (Swiss-Prot) # https://www.uniprot.org/downloads saved as data/uniprot_full.fasta
+- full UniProt (Swiss-Prot) # https://www.uniprot.org/downloads [Reviewed (Swiss-Prot)] file saved as data/uniprot_full.fasta
 - 200 randomly selected Bacteria
 - 200 randomly selected Viruses
 - 200 randomly selected Archaea
