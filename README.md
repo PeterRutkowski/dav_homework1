@@ -15,14 +15,13 @@ Calculate percentage content of all amino acids and prepare table (PrettyTable m
 Additionally, prepare bar plot for percentage content of all amino acids for E.coli, 
 human, yeast (thus group three bars for each amino acid).
 
-b) PDB
+b) PDB # ftp://ftp.wwpdb.org/pub/pdb/derived_data/pdb_seqres.txt saved as data/pdb_seqres.txt
 - calculate the average length of protein and percentage content of all amino acids (just numbers)
 
-Compare the result with the point (a). Can you explain the difference 
-(hint: open ftp://ftp.wwpdb.org/pub/pdb/derived_data/pdb_seqres.txt in text editor)? 
+Compare the result with the point (a). Can you explain the difference? 
 
 c) UniProt
-- full UniProt (Swiss-Prot)
+- full UniProt (Swiss-Prot) # https://www.uniprot.org/downloads saved as data/uniprot_full.fasta
 - 200 randomly selected Bacteria
 - 200 randomly selected Viruses
 - 200 randomly selected Archaea
