@@ -2,7 +2,7 @@ from prettytable import PrettyTable
 import numpy as np
 
 def amino_acid_content(filename):
-    # returns a list with percentage content of amino acids
+    # return a list with percentage content of amino acids
 
     amino_acids = {
         'G': 0,
@@ -68,16 +68,14 @@ contents = []
 for label in labels:
     contents.append(amino_acid_content('hw2/data_' + label + '.fasta'))
 
-    
-    
-# builds table
+# build table
 x = PrettyTable()
 x.title = 'Amino acid percentage content in proteins of given proteomes'
 x.field_names = ['amino acid', true_labels['ecoli'], true_labels['elegans'], true_labels['human'],
                  true_labels['melanogaster'], true_labels['mouse'], true_labels['subtilis'],
                  true_labels['thaliana'], true_labels['yeast'], true_labels['zebrafish']]
 
-# sorts plot data
+# sort plot data
 sums = []
 for i in range(len(amino_acids)):
     sum = 0
@@ -86,7 +84,6 @@ for i in range(len(amino_acids)):
     sums.append(sum)
 sorted_ind = np.argsort(sums)
 sorted_ind = np.flip(sorted_ind)
-
 
 for i in range(len(amino_acids)-5):
     row = []
