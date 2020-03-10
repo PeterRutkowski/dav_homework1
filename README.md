@@ -30,7 +30,7 @@ c) UniProt
 Prepare similar box plots and table as in (a).
 
 d) data exploration:
-- for each organism (a) and kingdom (b) make separate histogram for protein length
+- for each organism (a) and kingdom (b) make separate plot for protein length
 - calculate and plot median instead arthmetic mean
 - instead bar plots, use "boxplot" function (only protein length)
 https://en.wikipedia.org/wiki/Box_plot
